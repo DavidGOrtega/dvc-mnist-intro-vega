@@ -58,6 +58,5 @@ with tf.Session() as session:
         json.dump({ "batch_size": batch_size, "num_steps": num_steps, "learning_rate": learning_rate,  
             "took" : (time.time() - start) / 1000 }, outfile)
 
-    print(HISTORY_LOG)
     with open(os.path.join(dirname, '../metrics/history.json'), 'w') as outfile:
         json.dump(HISTORY_LOG, outfile)
