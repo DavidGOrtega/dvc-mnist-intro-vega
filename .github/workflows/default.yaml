@@ -17,7 +17,7 @@ jobs:
 
       - name: setup requirements
         run: |
-          pip install tensorflow imageio wget
+          pip install tensorflow==1.4.0 imageio wget
 
       - uses: DavidGOrtega/dvc-action@develop
         with:
