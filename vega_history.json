@@ -1,0 +1,22 @@
+{
+    "datasets": { "joined": [ "metrics/history.json@all" ] },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "repeat": ["accu", "loss", "val_accu", "val_loss"],
+    "data": { "name": "joined" }, 
+    "columns": 2,
+    "spec": {  
+        "mark": "line",
+        "encoding": {
+            "x": {"field": "step", "type": "quantitative"},
+            "y": {"field": {"repeat": "repeat"}, "type": "quantitative"},
+            "color": {"field": "@experiment", "type": "nominal"},
+            "opacity": { 
+                "condition": {
+                "test": "datum['@experiment'] === 'current'",
+                "value": 1
+                },
+                "value": 0.2
+            }
+        }
+    }
+}

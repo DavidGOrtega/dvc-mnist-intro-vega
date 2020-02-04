@@ -1,0 +1,43 @@
+{
+    "datasets": { "joined": [ "metrics/confusion_matrix.json", "metrics/confusion_matrix.json@old" ] },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": { "name": "joined"},
+    "facet": {"column": {"field": "@experiment", "type": "nominal"}},
+    "spec": {
+        "width": 300,
+        "height": 200,
+        "encoding": {
+            "x": {
+                "field": "prediction",
+                "type": "ordinal"
+            },
+            "y": {
+                "field": "label",
+                "type": "ordinal"
+            }
+        },
+        "layer": [
+            {
+                "mark": "rect",
+                "encoding": {
+                    "color": {
+                        "condition": {
+                            "test": "datum.label === datum.prediction",
+                            "value": "white"
+                        },
+                        "field": "count", "type": "quantitative"
+                    }
+                }
+            },
+            {
+                "mark": {"type": "text", "baseline": "middle"},
+                "encoding": {
+                    "text": {
+                        "field": "count",
+                        "type": "nominal"
+                    }
+                }
+            }
+        ]
+    }
+ }

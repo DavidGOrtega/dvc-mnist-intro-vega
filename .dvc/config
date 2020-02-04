@@ -1,0 +1,4 @@
+['remote "myremote"']
+url = s3://daviddvctest/dvc-mnist-intro-vega
+[core]
+remote = myremote
