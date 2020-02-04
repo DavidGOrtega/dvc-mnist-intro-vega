@@ -23,7 +23,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dvc_repro_file: eval.dvc
-          vega_templates: 'vega_history_multi.json,vega_confusion_matrix.json'
+          vega_templates: 'vega_history.json,vega_confusion_matrix.json'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
