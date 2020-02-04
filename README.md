@@ -1,1 +1,1 @@
-# dvc-mnist-intro-vega
+# dvc-mnist-intro-vega v2
