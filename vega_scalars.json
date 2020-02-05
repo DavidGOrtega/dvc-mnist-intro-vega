@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "repeat": ["learning_rate", "num_steps", "batch_size", "took", "accuracy"],
+    "columns": 1,
+    "data": {"name": "scalars"},
+    "spec": {
+        "mark": "bar",
+        "encoding": {
+            "x": { "field": "@experiment", "type": "nominal"},
+            "y": {
+            "field": {"repeat": "repeat"}, "type": "quantitative"
+        },
+        "color": { 
+            "condition": {
+                "test": "datum['@experiment'] === 'current'",
+                "value": "red"
+            }}
+        }
+    }
+}
