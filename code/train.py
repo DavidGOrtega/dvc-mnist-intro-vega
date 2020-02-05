@@ -9,8 +9,8 @@ DATASET = input_data.read_data_sets(os.path.join(dirname, "../data/"), one_hot=T
 OUT = os.path.join(dirname, "../models/mnist")
 
 batch_size = 128
-num_steps = 2300
-learning_rate = 0.01
+num_steps = 700
+learning_rate = 0.1
 start = time.time()
 
 # input
